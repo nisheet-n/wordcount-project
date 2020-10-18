@@ -1,0 +1,22 @@
+<body style="background-color: rgb(0, 0, 0);">
+
+	<h1 style="text-align: center; color:mediumaquamarine; font-size: 3rem;">
+		There are {{count}} words in your text
+	</h1>
+
+	<h2 style="text-align: center"><a href="{% url 'home' %}">Start Again</a></h2>
+
+	<h2 style="color: mediumaquamarine;">Your Text:</h2>
+	<p style="text-align:justify ;color: gray;">
+		{{ fulltext }}
+	</p>
+	<br />
+
+	<h2 style="color: mediumaquamarine;">Word Count:</h2>
+	<p style="text-align:justify ;color: gray;">
+		{% for word, counttotal in sortedwords %}
+		{{ word }} - {{counttotal}}
+		<br>
+		{% endfor %}
+	</p>
+</body>
