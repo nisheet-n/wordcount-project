@@ -1,17 +1,22 @@
-<body style="background-color: rgb(0, 0, 0);">
+{% extends "base.html" %}
 
-	<h1 style="text-align: center; color:mediumaquamarine; font-size: 3rem;">
-		WORD COUNT
-	</h1>
+{%block title%}
 
-	<h2 style="text-align: center; color: silver;">
-		<a href="{%url 'about'%}">About</a>
-	</h2>
+Word Count
 
-	<form action="{% url 'count' %}" style="text-align: center;">
-		<textarea cols="100" rows="25" name="fulltext"></textarea>
-		<br><br>
-		<input type="submit" value="COUNT" style="font-size: 2rem; color: white; background-color: blueviolet; 
-			border: mediumaquamarine; border-style:ridge; border-width: 0.5rem;" />
-	</form>
-</body>
+{%endblock%}
+
+
+{%block content%}
+
+<h1 style="text-align: center; color:white;">WORD COUNTING APP</h1>
+<br>
+
+<form action=" {% url 'count' %}" style="text-align: center;">
+	<textarea cols="100" rows="25" name="fulltext"></textarea>
+	<br><br>
+	<input type="submit" value="COUNT" style="font-size: large; color: white; background-color: blueviolet; 
+			border: 2px solid white; padding: 1rem;" />
+</form>
+
+{%endblock%}

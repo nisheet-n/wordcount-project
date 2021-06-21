@@ -16,6 +16,22 @@ def count(request):
 
     wordlist = fulltext.split()
 
+
+    sentencelist = fulltext.split(".")
+    paralist=fulltext.split("\n")
+    
+    sentences = 0
+    paragraphs = 0
+
+    for i in sentencelist:
+        if i:
+            sentences += 1
+    
+    for i in paralist:
+        if i:
+            paragraphs += 1
+
+
     worddictionary = {}
 
     for word in wordlist:
@@ -23,7 +39,7 @@ def count(request):
             worddictionary[word] += 1
         else:
             worddictionary[word] = 1
-
+    
     sortedwords = sorted(
         worddictionary.items(), key=operator.itemgetter(1), reverse=True
     )
@@ -31,5 +47,5 @@ def count(request):
     return render(
         request,
         "count.html",
-        {"fulltext": fulltext, "count": len(wordlist), "sortedwords": sortedwords},
+        {"fulltext": fulltext, "count": len(wordlist), "sortedwords": sortedwords, "sentences": sentences, "paragraphs": paragraphs},
     )

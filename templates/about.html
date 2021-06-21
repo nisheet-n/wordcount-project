@@ -1,16 +1,30 @@
-<body style="background-color: rgb(0, 0, 0);"></body>
+{% extends "base.html" %}
 
-<h1 style="text-align: center; color:mediumaquamarine; font-size: 2rem;">
+{%block title%}
+
+About
+
+{%endblock%}
+
+
+{%block content%}
+
+<h1 style="text-align: center; color:white">
 	ABOUT
 </h1>
 <br />
 
-<p style="text-align:justify ;color: gray;">
-	Hey!! This is a simple tool for counting words. Hope you like it!!
+<p style="font-size: larger; color: white; text-align: justify;">
+	This is a Word count app which counts the number of words in a document or passage of text. It is a useful tool for
+	writers to see the count of the total number of words in their article.
+	<br>
+	The user will enter the text of their choice in the text box provided in the homepage. Then the text will get
+	parsed and then the total number of words along with the number of characters, sentences, paragraphs and top
+	keywords will be displayed to the user.
+	<br><br>
+	Thank You!
 </p>
 
 <br />
 
-<h2 style="text-align: center; color: silver;">
-	<a href="{%url 'home'%}">Return</a>
-</h2>
+{%endblock%}
